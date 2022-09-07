@@ -4,15 +4,24 @@
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
 wp-content/*
-!wp-content/mu-plugins/
-!wp-content/plugins/
-!wp-content/themes/
 
-# ignore these plugins
+# themes
+!wp-content/themes
+wp-content/themes/*
+wp-content/themes/twenty*/
+!wp-content/themes/twentytwentytwo
+!wp-content/themes/tt2-child
+
+#  plugins
+!wp-content/mu-plugins
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/network-utilities.php
 wp-content/plugins/hello.php
 
-# ignore specific themes
-wp-content/themes/twenty*/
+!wp-content/plugins
+wp-content/plugins/*
+### <add plugins here>
+
 
 # ignore node dependency directories
 node_modules/
