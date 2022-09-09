@@ -1,0 +1,44 @@
+{
+  "version": 2,
+    "settings": {
+      "color": {
+        "palette": [
+          {
+            "slug": "foreground",
+            "color": "#e9e8fa",
+            "name": "Foreground"
+          },
+          {
+            "slug": "background",
+            "color": "#121020",
+            "name": "Background"
+          },
+          {
+            "slug": "primary",
+            "color": "#452949",
+            "name": "Primary"
+          },
+          {
+            "slug": "secondary",
+            "color": "#fff9ee",
+            "name": "Secondary"
+          },
+          {
+            "slug": "tertiary",
+            "color": "#9f8ab6",
+            "name": "Tertiary"
+          },
+          {
+            "slug": "accent",
+            "color": "#fff7d5",
+            "name": "Accent"
+          }
+        ]
+      },
+      "custom": {
+        "spacing": {
+          "outer": "0px"
+        }
+      }
+    }
+  }
