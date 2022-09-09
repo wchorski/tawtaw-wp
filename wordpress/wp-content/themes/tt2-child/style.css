@@ -45,9 +45,8 @@ Twenty Twenty-Two Child is distributed under the terms of the GNU GPL.
   font-family: 'Bebas Neue', cursive;
   font-family: 'Federo', sans-serif;
 }
-html{
+/* html{
   height: 100%;
-  /* box-sizing: border-box; */
   min-height: 100vh;
 }
 body{
@@ -68,15 +67,10 @@ a{
 }
 .wp-site-blocks footer{
   justify-self: flex-end;
-}
-
-
-/* .wp-site-blocks{
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 } */
 
-.wp-site-blocks, body > .is-root-container, .edit-post-visual-editor__post-title-wrapper, .wp-block-group.alignfull, .wp-block-group.has-background, .wp-block-cover.alignfull, .is-root-container .wp-block[data-align="full"] > .wp-block-group, .is-root-container .wp-block[data-align="full"] > .wp-block-cover {
+
+/* .wp-site-blocks, body > .is-root-container, .edit-post-visual-editor__post-title-wrapper, .wp-block-group.alignfull, .wp-block-group.has-background, .wp-block-cover.alignfull, .is-root-container .wp-block[data-align="full"] > .wp-block-group, .is-root-container .wp-block[data-align="full"] > .wp-block-cover {
   padding-left: 0 ;
   padding-right: 0 ;
 }
@@ -130,14 +124,14 @@ h3{
  background: rgb(68,247,218);
   background: linear-gradient(214deg, rgb(140, 80, 110) 0%,rgb(109, 63, 114) 100%) !important;
   color: bisque !important;
-}
+} */
 
 
 
 /* * NAV */
 /* * NAV */
 /* * NAV */
-.header-cont{
+/* .header-cont{
   box-shadow: black 1px 3px 8px;
   position: fixed;
   width: 100%;
@@ -173,7 +167,7 @@ h3{
 }
 .nav-main .wp-block-pages-list__item__link, 
 .nav-main .wp-block-navigation-link .wp-block-navigation-item__label{
-  /* background-color: green; */
+
   padding: 1em 2em;
   margin: 0;
   display: flex;
@@ -187,10 +181,10 @@ h3{
 
 .btn-login {
   margin-left: 1em;
-}
+} */
 
 /* * Nav mobile */
-@media only screen and (max-width: 596px) {
+/* @media only screen and (max-width: 596px) {
   .wp-block-navigation__responsive-container {
     display: block;
     visibility: hidden;
@@ -265,7 +259,7 @@ h3{
 }
 
 .btn-login{
-  /* background-color: var(--wp--preset--color--primary); */
+
   outline: solid 1px var(--wp--preset--color--primary);
   border-radius: 100px;
   transition: .5s;
@@ -274,12 +268,12 @@ h3{
 .btn-login:hover{
   background-color: var(--wp--preset--color--primary) !important;
   color: var(--wp--preset--color--tertiary) !important;
-}
+} */
 
 /* * Content  */
 /* * Content  */
 /* * Content  */
-@media only screen and (max-width: 596px) {
+/* @media only screen and (max-width: 596px) {
   .info-card{
     padding-left: 1em !important;
     padding-right: 1em !important;
@@ -289,14 +283,14 @@ h3{
     font-size: 80px !important;
   }
   
-}
+} */
 
 
 
 /* * JET FORM */
 /* * JET FORM */
 /* * JET FORM */
-.jet-form-builder__label-text{
+/* .jet-form-builder__label-text{
   color: var(--wp--preset--color--primary);
 }
 .textarea-field{
@@ -317,13 +311,13 @@ h3{
 .jet-form-builder__action-button:hover{
   color: var(--wp--preset--color--primary);
   background-color: var(--wp--preset--color--secondary);
-}
+} */
 
 
+/* * COMPONENTS
 /* * COMPONENTS */
 /* * COMPONENTS */
-/* * COMPONENTS */
-.videoTextbox{
+/* .videoTextbox{
   position: relative;
 }
 .marAutoL{
@@ -353,13 +347,11 @@ h3{
   .videoTextbox .vidframe{
     position: relative;
   }
-}
+} */ 
 
-/* * form */
-/* .wc-form{
 
-} */
-.wc-form.contact-form .jet-form-builder__field-wrap input{
+
+/* .wc-form.contact-form .jet-form-builder__field-wrap input{
   height: 30px;
   border: none;
   border-bottom: solid var(--wp--preset--color--primary) 1px;
@@ -370,4 +362,4 @@ h3{
 
 .wc-form.contact-form .field-type-textarea-field{
   margin-top: 1em;
-}
+} */
