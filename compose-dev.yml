@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+
+  db:
+    image: mariadb:10
+    container_name: wp-tawtaw-db
+    restart: always
+    volumes:
+      - './db:/var/lib/mysql'
+      - './backups:/backups'
+    environment:
+      MYSQL_DATABASE: tawtaw_db
+      MYSQL_USER: tawtaw_user
+      MYSQL_PASSWORD: <password4user>
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_ROOT_PASSWORD: <SUPERSTRONGPASSWORD>
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wp-tawtaw-wordpress
+    restart: always
+    depends_on: ['db']
+    ports: ['8888:80']
+    links: ['db:db']
+    volumes:
+      - './wordpress:/var/www/html'
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: tawtaw_db
+      WORDPRESS_DB_USER: tawtaw_user
+      WORDPRESS_DB_PASSWORD: <password4user>
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    container_name: wp-tawtaw-phpmyadmin
+    restart: always
+    depends_on: ['db']
+    ports: ['8887:80']
+    links: ['db:db']
+    environment:
+      PMA_HOST: 'db'
+      PMA_USER: 'tawtaw_user'
+      PMA_PASSWORD: '<password4user>'

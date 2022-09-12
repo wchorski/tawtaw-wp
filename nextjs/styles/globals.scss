@@ -1,3 +1,5 @@
+@import 'styles/var.scss';
+
 html,
 body {
   padding: 0;
@@ -13,6 +15,14 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+html{
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 @media (prefers-color-scheme: dark) {

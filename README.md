@@ -5,6 +5,7 @@ a start with customizing Wordpress's TwentyTwentyTwo Theme
 
 
 # ⚙ Dev evn 
+0. `cp compose-dev.yml compose.yml` -> change env if needed
 0. install wp (with TwentyTwentyTwo Theme)
 0. install woocommerce plugin
 + + import default /woocommerce/sample-data/sample_products.csv
