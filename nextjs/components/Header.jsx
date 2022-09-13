@@ -2,7 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useContext, useState } from 'react';
 import { isEmpty } from 'lodash';
-import {NavbarMain} from 'styles/NavbarMain.styled'
+import {sanitize} from 'utils/sanatize';
+import {StyledNavbarMain} from 'styles/NavbarMain.styled'
 
 // import { BurgerIcon, TailwindIcon, Bag, User, Wishlist } from '../../icons';
 import { FaBeer, FaHamburger, FaWind, FaShoppingBag, FaUserCircle,  } from 'react-icons/fa';
@@ -10,8 +11,6 @@ import { GiFallingStar } from 'react-icons/gi'
 import { AppContext } from 'components/Context';
 
 const Header = ( { data } ) => {
-
-  console.log(data);
 	
 	const [ cart, setCart ] = useContext( AppContext );
 	const { headerMenuItems, siteDescription, siteLogoUrl, siteTitle, favicon } = data || {};
@@ -29,10 +28,10 @@ const Header = ( { data } ) => {
 
 			<header className="header">
 
-				<NavbarMain className="main">
+				<StyledNavbarMain className="main">
 						<div className="Logo flex items-center flex-shrink-0 text-black mr-20">
 							<Link href="/">
-								<a>
+								<a className='siteLogo'>
 									{
 										siteLogoUrl ? (
 											<img src={ siteLogoUrl } alt={ `${ siteTitle } logo` }
@@ -44,29 +43,29 @@ const Header = ( { data } ) => {
 							</Link>
 
 							<span>
-								<Link href="/">
-									<a >{ siteTitle || 'There\'s a Will There\'s a Website' }</a>
+								<Link href="/" className='siteTitle'>
+									<a dangerouslySetInnerHTML={{ __html: sanitize( siteTitle ) || 'There\'s a Will There\'s a Website' }} />
 								</Link>
 								{ siteDescription ? <p>{ siteDescription }</p> : null }
 							</span>
 						</div>
 
 
-						<div className="block lg:hidden">
+						<div className="navwich block lg:hidden">
 							<button
 								onClick={ () => setMenuVisibility( ! isMenuVisible ) }
-								className="flex items-center px-3 py-2 border rounded text-black border-black hover:text-black hover:border-black">
-								<FaHamburger className="fill-current h-3 w-3"/>
+								className="">
+								<FaHamburger className=""/>
 							</button>
 						</div>
 
             
 						<div
-							className={ `${ isMenuVisible ? 'max-h-full' : 'h-0' } overflow-hidden w-full lg:h-full block flex-grow lg:flex lg:items-center lg:w-auto` }>
+							className={ `${ isMenuVisible ? 'visible' : 'hidden' } menu-cont` }>
 							<ul className="menu main">
 								{ ! isEmpty( headerMenuItems ) && headerMenuItems.length ? headerMenuItems.map( menuItem => (
-                  <li>
-                    <Link key={ menuItem?.ID } href={ menuItem?.url ?? '/' }>
+                  <li key={ menuItem?.ID }>
+                    <Link href={ menuItem?.url ?? '/' }>
                       <a dangerouslySetInnerHTML={ { __html: menuItem.title } }/>
                     </Link>
                   </li>
@@ -105,7 +104,7 @@ const Header = ( { data } ) => {
 							</ul>
 
 						</div>
-				</NavbarMain>
+				</StyledNavbarMain>
 
 			</header>
 		</>

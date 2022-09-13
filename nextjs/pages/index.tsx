@@ -13,8 +13,8 @@ const Home: NextPage = ({data}: any) => {
   
 
   return (
-    <div className={styles.container}>
 
+    <>
       <Header data={header}/>
 
       <main>
@@ -22,8 +22,7 @@ const Home: NextPage = ({data}: any) => {
       </main>
 
       <Footer data={footer}/>
-
-    </div>
+    </>
   )
 }
 
