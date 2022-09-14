@@ -8,13 +8,16 @@ export const StyledNavbarMain = styled.nav`
   flex-wrap: wrap;
   overflow: hidden;
 
+
+
   * {
     transition: .3s;
   }
 
   .Logo{
     display: flex;
-    background-color: var(--c-1);
+    /* background-color: var(--c-1); */
+    border-bottom: solid var(--c-1) 2px;
     padding: 1em 2em;
     
     .siteLogo{
@@ -28,6 +31,13 @@ export const StyledNavbarMain = styled.nav`
   /* .navwich{
     visibility: hidden;
   } */
+
+  .menu-cont{
+    max-height: 0;
+  }
+  .menu-cont.visible{
+    max-height: 10000px;
+  }
 
   ul.menu{
     display: flex;
@@ -75,7 +85,7 @@ export const StyledNavbarMain = styled.nav`
 
         &:hover{
           background-color: transparent;
-          color: white;
+          color: hsla(0, 0%, 96%, 0.234);;
         }
       }
     }

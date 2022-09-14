@@ -4,6 +4,7 @@ export const StyledFooter = styled.footer`
 
   background-color: var(--c-2);
 
+
   * {
     transition: .3s;
   }

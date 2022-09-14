@@ -24,7 +24,9 @@ const Footer = ({data}) => {
   }, []);
   
   return (
+    
     <StyledFooter>
+    <div className="inner-cont">
 
       <nav>
         <div className="widgets-cont">
@@ -32,11 +34,11 @@ const Footer = ({data}) => {
           { isMounted ? (
             <>
               {/*Widget One*/}
-              <div className="my-1 px-1 w-full overflow-hidden sm:w-full lg:w-1/2 xl:w-1/3">
+              <div>
                 <div dangerouslySetInnerHTML={{ __html: sanitize( sidebarOne ) }}/>
               </div>
               {/*Widget Two*/}
-              <div className="my-1 px-1 w-full overflow-hidden sm:w-full lg:w-1/2 xl:w-1/3">
+              <div>
                 <div dangerouslySetInnerHTML={{ __html: sanitize( sidebarTwo ) }}/>
               </div>
             </>
@@ -57,31 +59,34 @@ const Footer = ({data}) => {
 
         </div>
 
-
-        <div>
-          <div >
-            { !isEmpty( socialLinks ) && isArray( socialLinks ) ? (
-              <ul className="socialLinks-cont">
-                { socialLinks.map( socialLink => (
-                  <li key={socialLink?.iconName}>
-                    <a href={ socialLink?.iconUrl || '/' } target="_blank" title={socialLink?.iconName} className="socialLink">
-                      { 
-                        getIconComponentByName( socialLink?.iconName ) 
-                      }
-                      <span className="hidden">{socialLink?.iconName}</span>
-                    </a>
-                  </li>
-                ) ) }
-              </ul>
-            ) : null }
-          </div>
-
+        <div >
+          { !isEmpty( socialLinks ) && isArray( socialLinks ) ? (
+            <ul className="socialLinks-cont">
+              { socialLinks.map( socialLink => (
+                <li key={socialLink?.iconName}>
+                  <a href={ socialLink?.iconUrl || '/' } target="_blank" title={socialLink?.iconName} className="socialLink">
+                    { 
+                      getIconComponentByName( socialLink?.iconName ) 
+                    }
+                    <span className="hidden">{socialLink?.iconName}</span>
+                  </a>
+                </li>
+              ) ) }
+            </ul>
+          ) : null }
         </div>
       </nav>
 
+    </div>
       {/*Copyright Text*/}
       <div className="copyrightText">
-        { copyrightText ? copyrightText : '© There\'s a Will There\'s a Website 2022' }
+        <span style={{opacity: '.4'}}> 
+          { 
+            copyrightText 
+              ? <span style={{opacity: '.4'}}> {copyrightText} </span>
+              : <span style={{opacity: '.4'}}> © Copy Right 2022 </span>
+          }
+        </span> 
       </div>
     </StyledFooter>
   )
