@@ -1,5 +1,5 @@
 import Link from 'next/link';
-// import Image from '../image';
+import Image from 'components/Image';
 import { sanitize } from 'utils/sanatize';
 // import AddToCart from '../cart/add-to-cart';
 import { isEmpty } from 'lodash';
@@ -18,14 +18,14 @@ const Product = ( { product } ) => {
     <StyledProduct>
 			<Link href={product?.permalink ?? '/'}>
 				<a>
-					{/* <Image
+					<Image
 						sourceUrl={ img?.src ?? '' }
 						altText={ img?.alt ?? ''}
 						title={ product?.name ?? '' }
 						width="380"
 						height="380"
-					/> */}
-          <div className="img-frame">
+					/>
+          {/* <div className="img-frame">
             <img
               src={ img?.src ?? '' }
               altText={ img?.alt ?? ''}
@@ -33,7 +33,7 @@ const Product = ( { product } ) => {
               width="380"
               height="380"
             />
-          </div>
+          </div> */}
           <div className="namePrice-cont">
             <h6>{ product?.name ?? '' }</h6>
             <div className="price" dangerouslySetInnerHTML={{ __html: sanitize( product?.price_html ?? '' ) }}/>

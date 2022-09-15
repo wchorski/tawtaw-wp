@@ -21,7 +21,7 @@ export const StyledProduct = styled.article`
   justify-content: space-between;
 
   .img-frame{
-    background-color: blue;
+    /* background-color: blue; */
     width: 100%;
     height: auto;
     display: flex;

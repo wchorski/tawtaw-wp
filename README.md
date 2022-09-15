@@ -13,6 +13,11 @@ a start with customizing Wordpress's TwentyTwentyTwo Theme
 0. child theme functions.php => `update_option( 'siteurl', 'http://localhost:3000' );`
 
 
+# 📃 TODO List
++ `get-products.js` move to native Woocommerce API and ditch the npm plugin
++ figure out why images are being loaded in like `http://localhost:3000/_next/image?url=https%3A%2F%2Fi0.wp.com%2Fmobibooth.com%2Fstore%2Fwp-content%2Fuploads%2F2022%2F09%2Fsingle-1.jpg%3Ffit%3D800%252C800%26ssl%3D1&w=384&q=75`
+
+
 # 🙏 Special Thanks
 + create gutenberg blocks with pure React
 + + <a href="https://medium.com/geekculture/headless-wordpress-gutenberg-next-js-part-1-3-creating-a-block-with-react-e8d69e8460d4"> https://medium.com/geekculture/headless-wordpress-gutenberg-next-js-part-1-3-creating-a-block-with-react-e8d69e8460d4 </a>
