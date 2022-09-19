@@ -64,7 +64,7 @@ const Footer = ({data}) => {
             <ul className="socialLinks-cont">
               { socialLinks.map( socialLink => (
                 <li key={socialLink?.iconName}>
-                  <a href={ socialLink?.iconUrl || '/' } target="_blank" title={socialLink?.iconName} className="socialLink">
+                  <a href={ socialLink?.iconUrl || '/' } target="_blank" rel="noreferrer" title={socialLink?.iconName} className="socialLink">
                     { 
                       getIconComponentByName( socialLink?.iconName ) 
                     }

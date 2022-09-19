@@ -14,7 +14,8 @@ a start with customizing Wordpress's TwentyTwentyTwo Theme
 
 
 # 📃 TODO List
-+ `get-products.js` move to native Woocommerce API and ditch the npm plugin
++ ✅ `get-products.js` move to native Woocommerce API and ditch the npm plugin
++ use woocommerce native api endpoint `/wp-json/wc/store/cart/add-item`
 + figure out why images are being loaded in like `http://localhost:3000/_next/image?url=https%3A%2F%2Fi0.wp.com%2Fmobibooth.com%2Fstore%2Fwp-content%2Fuploads%2F2022%2F09%2Fsingle-1.jpg%3Ffit%3D800%252C800%26ssl%3D1&w=384&q=75`
 
 

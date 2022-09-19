@@ -19,7 +19,9 @@ import { DEFAULT_IMG } from 'utils/images';
 
 const Image = (props) => {
 
-  const {altText, title, width, height, sourceUrl, og_image, className, layout, objectFit, containerClassNames, showDefault, ...rest} = props;
+  const {altText, title, width, height, sourceUrl, className, layout, objectFit, containerClassNames, showDefault, ...rest} = props;
+
+  // console.log('sourceUrl: ', sourceUrl);
 	
 	if ( ! sourceUrl && ! showDefault ) {
 		return null;
@@ -34,7 +36,8 @@ const Image = (props) => {
 	if ( 'fill' === layout ) {
 		const attributes = {
 			alt: altText || title,
-			src: og_image.url || ( showDefault ? DEFAULT_IMG  : '' ),
+			src: sourceUrl || ( showDefault ? DEFAULT_IMG  : '' ),
+			// src: 'https://via.placeholder.com/380x380',
 			layout: 'fill',
 			className: cx( 'object-cover', className ),
 			...rest
@@ -49,6 +52,7 @@ const Image = (props) => {
 		const attributes = {
 			alt: altText || title,
 			src: sourceUrl || ( showDefault ? DEFAULT_IMG  : '' ),
+			// src: 'https://via.placeholder.com/380x380',
 			width: width || 'auto',
 			height: height || 'auto',
 			className,

@@ -8,6 +8,7 @@ import {StyledNavbarMain} from 'styles/NavbarMain.styled'
 // import { BurgerIcon, TailwindIcon, Bag, User, Wishlist } from '../../icons';
 import { FaBeer, FaHamburger, FaWind, FaShoppingBag, FaUserCircle,  } from 'react-icons/fa';
 import { GiFallingStar } from 'react-icons/gi'
+import { FaShoppingCart } from 'react-icons/fa'
 import { AppContext } from 'components/Context';
 
 const Header = ( { data } ) => {
@@ -63,7 +64,10 @@ const Header = ( { data } ) => {
 
             
 						<div
-							className={ `menu-cont ${ isMenuVisible ? 'visible' : 'hidden' }` }>
+            //! hide when done
+							// className={ `menu-cont ${ isMenuVisible ? 'visible' : 'hidden' }` }
+							className={ `menu-cont ${ isMenuVisible ? 'visible' : 'visible' }` }
+            >
 							<ul className="menu main">
 								{ ! isEmpty( headerMenuItems ) && headerMenuItems.length ? headerMenuItems.map( menuItem => (
                   <li key={ menuItem?.ID }>
@@ -95,10 +99,10 @@ const Header = ( { data } ) => {
                 </li>
                 <li>
                   <Link href="/cart">
-                    <a className="flex mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-10">
-                    <span className="flex flex-row items-center lg:flex-col">
-                      <FaShoppingBag className="mr-1 lg:mr-0"/>
-                      <span className="ml-1">Bag{ cart?.totalQty ? `(${cart?.totalQty})` : null }</span>
+                    <a>
+                    <span>
+                      <FaShoppingCart />
+                      <span className="ml-1"> Cart { cart?.totalQty ? `(${cart?.totalQty})` : null }</span>
                     </span>
                     </a>
                   </Link>
