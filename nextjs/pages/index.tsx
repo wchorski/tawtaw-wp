@@ -7,30 +7,33 @@ import  Footer  from 'components/Footer'
 import  Header  from 'components/Header'
 import  Products  from 'components/Products'
 import axios from 'axios'
+import { LayoutCoffeeBreak } from "components/Layouts";
 
 const Home: NextPage = ({headerFooter, products}: any) => {
 
   
-  const {header, footer} = headerFooter || {}  
+  // const {header, footer} = headerFooter || {}  
   // console.log(header);
   
 
   return ( 
 
     <>
-      <div className="layout-cont">
+    <LayoutCoffeeBreak headerFooter={headerFooter || {}}>
+      <Products products={products }/>
+    </LayoutCoffeeBreak>
+      {/* <div className="layout-cont">
 
         <Header data={header}/>
 
         <main>
           <div className="inner-cont">
             <h1>Main Content</h1>
-            <Products products={products }/>
           </div>
         </main>
 
         <Footer data={footer}/>
-      </div>
+      </div> */}
     </>
   )
 }

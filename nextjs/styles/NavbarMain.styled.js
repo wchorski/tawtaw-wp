@@ -83,10 +83,13 @@ export const StyledNavbarMain = styled.nav`
         color: black;
         padding: 1em;
         border-right: solid var(--c-bg) 1px;
+        transition: .1s;
+
+        
 
         &:hover{
           background-color: transparent;
-          color: hsla(0, 0%, 96%, 0.234);;
+          color: hsla(0, 0%, 96%, 1);;
         }
       }
     }

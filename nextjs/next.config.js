@@ -6,7 +6,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.wp.com',
+        hostname: '**.williamusic.com',
       },
       {
         protocol: 'https',

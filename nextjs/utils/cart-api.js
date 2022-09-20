@@ -5,6 +5,7 @@ export const getApiCartConfig = () => {
 	
 	const config = {
 		headers: {
+      'Content-Type': 'application/json',
 			'X-Headless-CMS': true,
 		},
 	}

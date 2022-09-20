@@ -21,14 +21,14 @@ const Product = ( { product } ) => {
     <StyledProduct>
 			<Link href={product?.permalink ?? '/'}>
 				<a>
-					{/* <Image
+					<Image
 						sourceUrl={ img?.src ?? '' }
 						altText={ img?.alt ?? ''}
 						title={ product?.name ?? '' }
 						width="380"
 						height="380"
-					/> */}
-          <div className="img-frame">
+					/>
+          {/* <div className="img-frame">
             <img
               src={ img?.src ?? '' }
               alt={ img?.alt ?? ''}
@@ -36,7 +36,7 @@ const Product = ( { product } ) => {
               width="380"
               height="380"
             />
-          </div>
+          </div> */}
 
           <div className="namePrice-cont">
             <h6>{ product?.name ?? '' }</h6>

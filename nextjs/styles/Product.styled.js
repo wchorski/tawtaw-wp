@@ -13,7 +13,7 @@ export const StyledProduct = styled.article`
   box-shadow: black 1px 1p;
 
   width: 15em;
-  height: 20em;
+  height: auto;
   border-radius: 5px;
 
   display: flex;
@@ -36,7 +36,7 @@ export const StyledProduct = styled.article`
   }
 
   .namePrice-cont{
-
+    margin-bottom: 1em;
   }
   .price{
     color: black;

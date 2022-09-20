@@ -18,7 +18,8 @@ export const addToCart = ( productId, qty = 1, setCart, setIsAddedToCart, setLoa
 	const addOrViewCartConfig = getApiCartConfig();
 	
 	setLoading(true);
-	
+
+  // TODO HELP -- using enpoints in POST MAN works as it should, but not here
 	axios.post( WC_CART, {
 			product_id: productId,
 			quantity: qty,
@@ -26,16 +27,17 @@ export const addToCart = ( productId, qty = 1, setCart, setIsAddedToCart, setLoa
 		addOrViewCartConfig,
 	)
 		.then( ( res ) => {
-			
-			if ( isEmpty( storedSession ) ) {
-				storeSession( res?.headers?.[ 'x-wc-session' ] );
-			}
-			setIsAddedToCart(true);
-			setLoading(false);
-			viewCart( setCart );
+
+      console.log('data post: ', res?.data);
+      
+      if ( isEmpty( storedSession ) ) { storeSession( res?.headers?.[ 'x-wc-session' ] ) }
+
+			setIsAddedToCart(true)
+			setLoading(false)
+			viewCart( setCart ) 
 		} )
 		.catch( err => {
-			console.log( 'err', err );
+			console.warn( 'err', err )
 		} );
 };
 
@@ -51,6 +53,10 @@ export const viewCart = ( setCart, setProcessing = () => {} ) => {
 	
 	axios.get( WC_CART, addOrViewCartConfig )
 		.then( ( res ) => {
+
+      // TODO HELP -- This is returning 'null'
+      console.log('viewCart', res?.data);
+
 			const formattedCartData = getFormattedCartData( res?.data ?? [] )
 			setCart( formattedCartData );
 			setProcessing(false);

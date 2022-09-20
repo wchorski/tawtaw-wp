@@ -9,6 +9,7 @@ import {StyledNavbarMain} from 'styles/NavbarMain.styled'
 import { FaBeer, FaHamburger, FaWind, FaShoppingBag, FaUserCircle,  } from 'react-icons/fa';
 import { GiFallingStar } from 'react-icons/gi'
 import { FaShoppingCart } from 'react-icons/fa'
+import { BsFillCircleFill } from 'react-icons/bs'
 import { AppContext } from 'components/Context';
 
 const Header = ( { data } ) => {
@@ -102,6 +103,7 @@ const Header = ( { data } ) => {
                     <a>
                     <span>
                       <FaShoppingCart />
+                      <BsFillCircleFill />
                       <span className="ml-1"> Cart { cart?.totalQty ? `(${cart?.totalQty})` : null }</span>
                     </span>
                     </a>
